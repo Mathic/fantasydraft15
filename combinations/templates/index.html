@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Fantasy Draft{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="box">
+    	<div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">
+                <strong>Fantasy Draft Picking</strong>
+            </h2>
+            <hr>
+    		<div id='fightersList'>
+		    <table class='fightersEditor'>
+		        <tr>
+		            <th>Name</th>
+		            <th>Salary</th>
+		            <th>Fight Number</th>
+		        </tr>
+		        <tbody data-bind="foreach: fighters">
+		            <tr>
+		                <td>
+		                    <input data-bind='value: fullName' />
+		                </td>
+		                <td><input data-bind='value: salary' /></td>
+		                <td><input data-bind='value: fight' /></td>
+		                <td><div><a href='#' data-bind='click: $root.removeFighter'>Delete</a></div></td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</div>
+		 
+		<p>
+		    <button class="btn btn-primary" data-bind='click: addFighter'>Add a fighter</button>
+		    <!-- <button data-bind='click: save, enable: fighters().length > 0'>Save to JSON</button> -->
+		</p>
+		 
+		<textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+		<button class="btn btn-default" data-bind='click: getCombinations'>Get Combinations</button>
+		
+		<script>
+			console.log(5 + 6);
+		</script>
+    	</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn fantasydraft15.wsgi --log-file -
